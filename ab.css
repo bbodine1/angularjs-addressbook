@@ -1,0 +1,298 @@
+:root {
+  --white: #ffffff;
+  --bunting: #2c324b;
+  --rangoon: #1a1a1a;
+  --rebecca: #663399;
+  --bg-color: var(--bunting);
+  --text-light: var(--white);
+  --text-dark: var(--rangoon);
+  --heading-font: 'Barlow', sans-serif;
+  --body-font: 'Open Sans', sans-serif;
+  --page-max-width: 1440px;
+  --transition: all 200ms ease-in-out;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Reset box sizing */
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-light);
+  margin: 0;
+  padding: 0;
+  font-family: var(--body-font);
+  font-weight: 300;
+}
+
+/* Logo Container */
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 18px;
+  font-family: var(--heading-font);
+  text-align: center;
+  min-height: 100px;
+}
+
+/* Navigation container */
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 60px;
+  margin-bottom: 24px;
+}
+
+/* Nav Buttons */
+nav a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 8px 16px;
+  color: var(--text-dark);
+  background-color: #b1b1b1;
+  text-decoration: none;
+  border-radius: 4px;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+/* Nav Button spacing  */
+nav a:not(:last-of-type) {
+  margin-right: 16px;
+}
+
+/* Nav button active and hover */
+nav a.active,
+nav a:hover {
+  background-color: var(--white);
+}
+
+/* Nav button active specific */
+nav a.active {
+  -webkit-box-shadow: inset 0 0 0 1px var(--rebecca);
+          box-shadow: inset 0 0 0 1px var(--rebecca);
+}
+
+/* Search box container */
+.search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  padding: 0 16px;
+  margin-bottom: 24px;
+}
+
+/* Search input style */
+.search input {
+  width: 100%;
+  max-width: 600px;
+  height: 48px;
+  -webkit-box-shadow: inset 0 0 0 1px var(--rangoon);
+          box-shadow: inset 0 0 0 1px var(--rangoon);
+  padding: 8px 12px;
+  font-size: 22px;
+  outline: 0;
+  border: 0;
+  border-radius: 4px;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+/* Search input focus styles */
+.search input:focus {
+  -webkit-box-shadow: inset 0 0 3px 1px var(--rebecca);
+          box-shadow: inset 0 0 3px 1px var(--rebecca);
+}
+
+/* Content container */
+.container {
+  width: 100%;
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Empty results container */
+.empty {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: var(--white);
+  height: 60px;
+  color: var(--text-dark);
+  border-radius: 4px;
+  margin-top: 24px;
+}
+
+/* Table view specific styles */
+/* Table container */
+.table-view {
+  margin-bottom: 32px;
+}
+
+/* Table header */
+.table-view .row.header {
+  font-weight: 700;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: var(--bg-color);
+}
+
+/* Table rows */
+.table-view .row {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+  font-size: 12px;
+}
+@media only screen and (min-width: 600px) {
+  /* Table rows */
+  .table-view .row {
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Table rows hover state */
+.table-view .row:not(:first-of-type):hover {
+  background-color: rgba(255,0,0, .1);
+}
+
+/* Table rows even styles */
+.table-view .row:nth-child(even) {
+  background-color: rgba(0,0,0, .1);
+}
+
+/* Row items */
+.table-view .row span {
+  padding: 8px 4px;
+}
+
+/* Card view specific styles */
+/* Card container */
+.card-view {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  margin-bottom: 32px;
+}
+
+/* Card styles */
+.card-view .card {
+  background-color: white;
+  border-radius: 4px;
+  color: black;
+  width: 100%;
+  min-height: 200px;
+  padding: 8px;
+  font-size: 14px;
+}
+@media only screen and (min-width: 600px) {
+  /* Card styles */
+  .card-view .card {
+    width: calc(50% - 8px);
+  }
+
+  /* Card styles odd but not last */
+  .card-view .card:nth-child(odd):not(:last-of-type) {
+    margin-right: 16px;
+  }
+
+  /* Card styles only last */
+  .card-view .card:last-of-type {
+    margin-bottom: 16px;
+  }
+}
+@media only screen and (min-width: 900px) {
+  /* Card styles */
+  .card-view .card {
+    width: calc(33.3333333% - 16px);
+  }
+
+  /* Card styles but not last */
+  .card-view .card:not(:last-of-type) {
+    margin-right: 16px;
+  }
+
+  /* Card styles but not every 3rd or last */
+  .card-view .card:nth-child(3n):not(:last-of-type) {
+    margin-right: 0;
+  }
+}
+
+/* Card styls not last */
+.card-view .card:not(:last-of-type) {
+  margin-bottom: 16px;
+}
+
+/* Card rows */
+.card-view .card .row {
+  display: -ms-grid;
+  display: grid;
+  --ms-grid-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Card labels */
+.card-view small {
+  display: block;
+  font-size: 8px;
+  font-weight: bold;
+}

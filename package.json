@@ -1,0 +1,16 @@
+{
+  "name": "terradin-test",
+  "version": "1.0.0",
+  "description": "Front End Developer test for Terradin",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Brad Bodine <bbodine1@gmail.com>",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}

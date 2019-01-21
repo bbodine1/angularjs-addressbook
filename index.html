@@ -1,0 +1,41 @@
+<!doctype html>
+<html ng-app="abApp">
+
+<head>
+  <title>XYZ Inc. Address Book</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.21/angular-ui-router.min.js" defer></script>
+  <script src="./xml2json.js" defer></script>
+  <script src="./ab.js" defer></script>
+
+  <link rel="stylesheet" href="./ab.css">
+  <link href="https://fonts.googleapis.com/css?family=Barlow:700|Open+Sans:300,300i,400,400i" rel="stylesheet">
+</head>
+
+<body>
+  <div ng-controller="AddressBookController">
+    <header>
+      <h1>XYZ Inc.<br>Address Book</h1>
+    </header>
+
+    <nav>
+      <a ui-sref="table" ui-sref-active="active">Table</a>
+      <a ui-sref="cards" ui-sref-active="active">Cards</a>
+    </nav>
+
+    <section class="search">
+      <input type="search" ng-model="searchText" placeholder="Type to Search">
+    </section>
+
+    <div class="container">
+
+      <ui-view></ui-view>
+
+    </div>
+  </div>
+</body>
+</html>

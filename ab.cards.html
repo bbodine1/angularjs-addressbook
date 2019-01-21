@@ -1,0 +1,46 @@
+<div class="card-view">
+  <div class="card" ng-repeat="contact in ab.AddressBook.Contact | filter:searchText as results">
+    <div class="row">
+      <span>
+        <small>Company</small>
+        {{ contact.CompanyName }}
+      </span>
+      <span>
+        <small>Company ID</small>
+        {{ contact.CustomerID }}
+      </span>
+    </div>
+
+    <div class="row">
+      <span>
+        <small>Contact Name</small>
+        {{ contact.ContactName }}
+      </span>
+      <span>
+        <small>Email</small>
+        {{ contact.Email }}
+      </span>
+    </div>
+
+    <div class="row">
+      <span>
+        <small>Contact Title</small>
+        {{ contact.ContactTitle }}
+      </span>
+      <span>
+        <small>Phone / Fax</small>
+        {{ contact.Phone }}<br>{{ contact.Fax }}
+      </span>
+    </div>
+
+    <div class="row">
+      <span>
+        <small>Company Address</small>
+        {{ contact.Address }}<br>{{ contact.City }}, {{ contact.Country }}<br>{{ contact.PostalCode }}
+      </span>
+    </div>
+  </div>
+
+  <div class="card empty" ng-if="results.length == 0">No Results Found</div>
+  <div class="card empty" ng-if="ab == false">Error Loading Data</div>
+</div>
